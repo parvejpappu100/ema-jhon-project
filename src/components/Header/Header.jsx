@@ -8,7 +8,7 @@ const Header = () => {
   const [open , setOpen] = useState();
   return (
     <div>
-      <div className='lg:container mx-auto  p-2 font-semibold lg:text-white ema-jon-nav-bar'>
+      <div className='lg:container mx-auto  p-2 lg:text-white ema-jon-nav-bar'>
             <div className='flex flex-row-reverse items-center justify-between'>
                 <button onClick={() => setOpen(!open)} className='lg:hidden'>
                     <span>{open === true ? 
