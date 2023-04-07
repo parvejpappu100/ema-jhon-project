@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import { removeFromDb } from '../../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 
 const Orders = () => {
     const savedCart = useLoaderData();
@@ -28,7 +30,14 @@ const Orders = () => {
                     }
                 </div>
                 <div className=' sticky top-0 bg-orange-200 pt-5 p-5 md:col-span-2 lg:col-span-2'>
-                    <Cart cart={cart}></Cart>
+                    <Cart cart={cart}>
+                        <Link to='/checkout'>
+                            <button className='btn btn-warning w-full text-white flex justify-between'>
+                               <span>Proceed Checkout</span>
+                               <span><FontAwesomeIcon icon={faArrowRightLong} /></span>
+                            </button>
+                        </Link>
+                    </Cart>
                 </div>
             </div>
         </div>

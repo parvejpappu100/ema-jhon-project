@@ -1,11 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan , faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan  } from '@fortawesome/free-solid-svg-icons'
 import { deleteShoppingCart } from '../../fakedb';
 import { Link } from 'react-router-dom';
 
 
-const Cart = ({cart}) => {
+const Cart = ({cart , children}) => {
     
     let totalPrice = 0 ;
     let totalShipping = 0 ;
@@ -38,12 +38,7 @@ const Cart = ({cart}) => {
                 <span>Clear Cart</span>
                 <span><FontAwesomeIcon icon={faTrashCan} /> </span>
             </button>
-            <Link to='/orders'>
-                <button className='btn btn-warning w-full text-white flex justify-between'>
-                    <span>Proceed Order</span>
-                    <span><FontAwesomeIcon icon={faArrowRightLong} /> </span>
-                </button>
-            </Link>
+            {children}
         </div>
     );
 };
