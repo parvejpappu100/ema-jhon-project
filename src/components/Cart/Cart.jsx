@@ -39,7 +39,7 @@ const Cart = ({cart}) => {
                 <span><FontAwesomeIcon icon={faTrashCan} /> </span>
             </button>
             <Link to='/orders'>
-                <button className='btn btn-error w-full text-white flex justify-between'>
+                <button className='btn btn-warning w-full text-white flex justify-between'>
                     <span>Proceed Order</span>
                     <span><FontAwesomeIcon icon={faArrowRightLong} /> </span>
                 </button>
