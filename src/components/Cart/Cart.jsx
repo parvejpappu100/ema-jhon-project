@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan , faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+
 
 const Cart = ({cart}) => {
     
@@ -20,6 +23,14 @@ const Cart = ({cart}) => {
             <p className='my-2'>Total Shipping : ${totalShipping}</p>
             <p>Tax : ${tax.toFixed(2)}</p>
             <h6 className='my-2 font-bold text-xl'>Grand Total : ${grandTotal.toFixed(2)}</h6>
+            <button className='btn btn-error w-full text-white flex justify-between my-3'>
+                <span>Clear Cart</span>
+                <span><FontAwesomeIcon icon={faTrashCan} /> </span>
+            </button>
+            <button className='btn btn-error w-full text-white flex justify-between'>
+                <span>Review Order</span>
+                <span><FontAwesomeIcon icon={faArrowRightLong} /> </span>
+            </button>
         </div>
     );
 };

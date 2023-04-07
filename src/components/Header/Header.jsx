@@ -25,7 +25,7 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           <img src={logo} className="hidden lg:block" />
           <ul
-            className={`menu-bar-item z-50 rounded-l-md lg:flex gap-5 text-xl absolute lg:static duration-500 ${
+            className={`menu-bar-item z-50 rounded-bl-md lg:flex gap-5 text-xl absolute lg:static duration-500 ${
               open ? `top-14 right-0` : `-top-40 right-0`
             }`}
           >
