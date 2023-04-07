@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan , faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 import { deleteShoppingCart } from '../../fakedb';
+import { Link } from 'react-router-dom';
 
 
 const Cart = ({cart}) => {
@@ -37,10 +38,12 @@ const Cart = ({cart}) => {
                 <span>Clear Cart</span>
                 <span><FontAwesomeIcon icon={faTrashCan} /> </span>
             </button>
-            <button className='btn btn-error w-full text-white flex justify-between'>
-                <span>Review Order</span>
-                <span><FontAwesomeIcon icon={faArrowRightLong} /> </span>
-            </button>
+            <Link to='/orders'>
+                <button className='btn btn-error w-full text-white flex justify-between'>
+                    <span>Proceed Order</span>
+                    <span><FontAwesomeIcon icon={faArrowRightLong} /> </span>
+                </button>
+            </Link>
         </div>
     );
 };
