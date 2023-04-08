@@ -5,7 +5,7 @@ import { deleteShoppingCart } from '../../fakedb';
 import { Link } from 'react-router-dom';
 
 
-const Cart = ({cart , children}) => {
+const Cart = ({cart , children , handleDeleteCart}) => {
     
     let totalPrice = 0 ;
     let totalShipping = 0 ;
@@ -21,10 +21,6 @@ const Cart = ({cart , children}) => {
     const tax = (totalPrice * 7) / 100 ;
     const grandTotal = totalPrice + totalShipping + tax ; 
 
-    const handleDeleteCart = () =>{
-        deleteShoppingCart();
-        location.reload()
-    }
 
     return (
         <div className='cart'>

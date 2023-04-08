@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
-import { addToDb, getShoppingCart } from '../../fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../fakedb';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
@@ -32,6 +32,11 @@ const Shop = () => {
 
     } , [products])
 
+     const handleDeleteCart = () =>{
+        setCart([]);
+        deleteShoppingCart()
+     }
+
     const handleAddToCart = (product) =>{
         const newCart = [...cart , product];
         setCart(newCart);
@@ -50,7 +55,7 @@ const Shop = () => {
                 }
             </div>
             <div className=' sticky top-0 bg-orange-200 pt-5 p-5'>
-                <Cart cart = {cart}>
+                <Cart cart = {cart} handleDeleteCart = {handleDeleteCart}>
                     <Link to='/orders'>
                         <button className='btn btn-warning w-full text-white flex justify-between'>
                             <span>Review Order</span>
